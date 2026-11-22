@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://b8xc25chydlwv"]
+
+[ext_resource type="Script" uid="uid://cr4ssurgwxyn3" path="res://src/scripts/core/main.gd" id="1_hsw67"]
+[ext_resource type="PackedScene" uid="uid://djd8ylcwu4xj4" path="res://src/scenes/world/hex_grid.tscn" id="2_4rfip"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_sqk71"]
+size = Vector2(30, 30)
+
+[node name="main" type="Node3D" unique_id=1025571136]
+script = ExtResource("1_hsw67")
+
+[node name="ground" type="MeshInstance3D" parent="." unique_id=1972552854]
+mesh = SubResource("PlaneMesh_sqk71")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1191343060]
+transform = Transform3D(0.8660254, 0.43301272, -0.24999999, 0, 0.49999997, 0.86602545, 0.5, -0.75, 0.43301266, 0, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=383724271]
+transform = Transform3D(0.70710677, -0.49999997, 0.49999997, 0, 0.70710677, 0.70710677, -0.70710677, -0.49999997, 0.49999997, 12, 12, 12)
+projection = 1
+current = true
+size = 20.0
+
+[node name="HexGrid" parent="." unique_id=1714785993 instance=ExtResource("2_4rfip")]

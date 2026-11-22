@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://djd8ylcwu4xj4"]
+
+[ext_resource type="Script" uid="uid://cv86trh5g28co" path="res://src/scripts/grid/hex_grid.gd" id="1_401sr"]
+[ext_resource type="PackedScene" uid="uid://c44ekptrfekds" path="res://src/scenes/world/hex_tile.tscn" id="2_62d62"]
+
+[node name="HexGrid" type="Node3D" unique_id=1714785993]
+script = ExtResource("1_401sr")
+tile_scene = ExtResource("2_62d62")
