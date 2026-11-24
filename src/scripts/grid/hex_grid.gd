@@ -6,6 +6,7 @@ extends Node3D
 @export var tile_y_offset: float = 0.1
 @export var tile_scene: PackedScene
 
+var tiles: Dictionary = {}
 
 func _ready() -> void:
 	generate_grid()
@@ -33,7 +34,9 @@ func generate_grid() -> void:
 				world_position.z
 			)
 
+			tile.scale = Vector3(0.96, 1.0, 0.96)
 			add_child(tile)
+			tiles[Vector2i(q, r)] = tile
 
 
 func axial_to_world(q: int, r: int) -> Vector3:
@@ -41,3 +44,6 @@ func axial_to_world(q: int, r: int) -> Vector3:
 	var z: float = hex_radius * 1.5 * r
 
 	return Vector3(x, 0.0, z)
+	
+func get_tile(coordinates: Vector2i) -> StaticBody3D:
+	return tiles.get(coordinates)
